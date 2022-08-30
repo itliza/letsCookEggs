@@ -1,8 +1,9 @@
-const time = 9;
+const time = 0.1;
 let amountTime = time * 60;
 
 const btnStart = document.querySelector('.btn_start');
 
+const audio = new Audio('../sound/alarm.mp3');
 
 
 btnStart.addEventListener('click', ()=>{
@@ -35,6 +36,7 @@ function calculateTime(){
         stopTimer();
         changeData();
         amountTime = 0;
+        audio.play();
     }
 
 
