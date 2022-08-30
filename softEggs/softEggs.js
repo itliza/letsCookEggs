@@ -3,14 +3,22 @@ let amountTime = time * 60;
 
 const btnStart = document.querySelector('.btn_start');
 
+
+
 btnStart.addEventListener('click', ()=>{
     timer = setInterval(calculateTime, 1000);
 
+    gsap.to('.btn_start', {display: 'none', duration: 0})
+
 })
+
+
 
 function calculateTime(){
     const countDown = document.querySelector('.countdown');
-    countDown.style.display = 'block';
+    
+    gsap.to('.countdown', {display: 'block', duration: 0})
+
     let minutes = Math.floor(amountTime/60);
     let seconds = amountTime%60;
 
