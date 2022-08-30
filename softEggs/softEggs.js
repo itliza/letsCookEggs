@@ -25,6 +25,7 @@ function calculateTime(){
 
     if(amountTime < 0) {
         stopTimer();
+        changeData();
         amountTime = 0;
     }
 
@@ -32,6 +33,14 @@ function calculateTime(){
     function stopTimer(){
         clearInterval(timer);
     
+    }
+
+    function changeData(){
+        btnStart.style.display = 'none';
+        countDown.style.display = 'none';
+        
+        const textContainer = document.querySelector('.cooking_info');
+        textContainer.textContent = `⏰ It's time to take pan out from fire and taste eggs ⏰`;
     }
 
 
